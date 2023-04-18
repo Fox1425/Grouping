@@ -2,9 +2,16 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #600B14;
-    background-color: #EC8F30;
+    /* background-color: #EC8F30; */
+    margin: 0;
 }
 
+@media screen and (min-width: 37em) {
+    body{
+        background-color: #EC8F30;
+    }
+    
+}
 /* Make the h1 look like a banner */
 h1 {
     color: #fdf2d1;
@@ -26,8 +33,14 @@ h2 {
     margin: 0;
     padding: 0;
     background-color: #00315e;
-    display: flex;
+    /* display: flex;  */ /*media query*/
 }
+@media screen and (min-width:30em){ 
+    .navigation{
+     display: flex;
+    }
+}
+
 .navigation a {
     text-decoration:none;
     color: #fff;
@@ -57,20 +70,41 @@ footer {
 
 
 /* This rule is for the <div> that encloses the whole page */
+
 .page-container {
-    width: 90%;
+    /* width: 90%; */
     padding: 0.5em;
     background-color: #fff;
-    margin: auto;
+    /* margin: auto; */
 
 }
 
+@media screen and (min-width: 37em) {
+    
+    .page-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    body {
+        margin-top: 1em;
+    }
+}
 /* This rule is for the main content of the page */
 main {
-    padding: 2em 0em;
+    /* padding: 2em 0em;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; 
     column-gap: 2em;
+ */ /* moved to media screen - show articles in block on mobile*/
+}
+@media screen and (min-width: 37em) {
+    main {
+        padding: 2em 0em;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        column-gap:2em;
+    }
+    
 }
 
 /* This grouped selector rule applies to both of the "regions" */
@@ -85,6 +119,11 @@ main {
     background-color: #FFBC8F; /* pale peach/orange */
 }
 
+@media screen and (max-width: 37em) {
+    .html-feature {
+        margin-bottom: 1em;
+    }
+}
 /* This rule is for the CSS article */
 .css-feature {
     background-color: #FFF59C; /* pale yellow */
